@@ -1,0 +1,21 @@
+int para(char*s)
+{   int p=0,i=0;
+    while((i<strlen(s))&&(p>=0))
+    {
+        if(s[i]=='(')
+            p++;
+        else if(s[i]==')')
+            p--;
+        i++;
+    }
+    if(p)
+        return(0);
+    else
+        return(1);
+}
+void main()
+{
+    char t[]="(())((()))";
+    printf("%d",para(t));
+
+}
