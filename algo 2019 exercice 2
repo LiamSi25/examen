@@ -1,0 +1,54 @@
+void fus(int*t1,int*t2,int n1,int n2)
+{   int t3[n1+n2];
+    int i=0,j=0,k=0,q=0,s=0,l=0;
+    while((i<n1)&&(j<n2))
+    {
+        if(t1[i]<t2[j])
+        {
+            t3[k]=t1[i];
+            i++;
+            k++;
+        }
+        else if(t1[i]>t2[j])
+        {
+            t3[k]=t2[j];
+            j++;
+            k++;
+        }
+        else
+        {
+            t3[k]=t1[i];
+            i++;
+            j++;
+            k++;
+        }
+    }
+
+        if(n1-i>0)
+            for(q=i;q<n1;q++)
+            {
+                t3[k]=t1[q];
+                k++;
+            }
+        if(n2-j>0)
+            for(s=j;s<n2;s++)
+            {
+                t3[k]=t2[s];
+                k++;
+            }
+
+    for(l=0;l<k;l++)
+    {
+        printf("%d\n",t3[l]);
+    }
+
+
+}
+void main()
+{
+    int m[]={-1,5,61,100,101,102};
+    int n[]={-10,9,101,102,200};
+
+    fus(m,n,6,5);
+
+}
